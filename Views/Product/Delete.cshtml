@@ -1,0 +1,22 @@
+@model ERPWebApp.Models.Product
+@{
+    ViewData["Title"] = "Delete Product";
+}
+<div class="container mt-4">
+    <h2>Delete Product</h2>
+    <div class="alert alert-danger">
+        <strong>Are you sure you want to delete this product?</strong>
+    </div>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text"><strong>Quantity:</strong> @Model.Quantity</p>
+            <p class="card-text"><strong>Price:</strong> @Model.Price</p>
+        </div>
+    </div>
+    <form asp-action="Delete" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a href="/Product" class="btn btn-secondary ms-2">Cancel</a>
+    </form>
+</div> 

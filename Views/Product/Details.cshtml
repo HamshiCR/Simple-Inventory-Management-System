@@ -1,0 +1,17 @@
+@model ERPWebApp.Models.Product
+@{
+    ViewData["Title"] = "Product Details";
+}
+<div class="container mt-4">
+    <h2>Product Details</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">@Model.Name</h5>
+            <p class="card-text"><strong>Quantity:</strong> @Model.Quantity</p>
+            <p class="card-text"><strong>Price:</strong> @Model.Price</p>
+            <a href="/Product/Edit/@Model.Id" class="btn btn-warning">Edit</a>
+            <a href="/Product/Delete/@Model.Id" class="btn btn-danger">Delete</a>
+            <a href="/Product" class="btn btn-secondary ms-2">Back to List</a>
+        </div>
+    </div>
+</div> 
